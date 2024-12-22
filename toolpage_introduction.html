@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>柳入微 - 吴科锦的女朋友</title>
+    <style>
+        /* 添加动画关键帧 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatingHeart {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes quoteSlideIn {
+            from { 
+                transform: translateX(-100px) rotate(-2deg);
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0) rotate(0);
+                opacity: 1; 
+            }
+        }
+
+        @keyframes quotePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #ff69b4;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1::after {
+            content: '❤';
+            position: absolute;
+            margin-left: 10px;
+            animation: floatingHeart 2s infinite ease-in-out;
+        }
+
+        .quote {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            animation: quoteSlideIn 0.8s ease-out;
+            animation-fill-mode: both;
+            border-left: 5px solid #ff69b4;
+        }
+
+        .quote:nth-child(1) { animation-delay: 0.3s; }
+        .quote:nth-child(2) { animation-delay: 0.6s; }
+        .quote:nth-child(3) { animation-delay: 0.9s; }
+
+        .quote:hover {
+            transform: translateY(-5px) rotate(1deg);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95);
+            animation: quotePulse 2s infinite ease-in-out;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 60px;
+            color: rgba(255, 105, 180, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .image-container {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .image-container:nth-child(1) { animation-delay: 0.8s; }
+        .image-container:nth-child(2) { animation-delay: 1s; }
+        .image-container:nth-child(3) { animation-delay: 1.2s; }
+
+        .image-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            color: #ff69b4;
+            border-bottom: 2px solid #ff69b4;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* 添加响应式设计 */
+        @media (max-width: 800px) {
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>柳入微 - 凶凶的女朋友</h1>
+    
+    <h2>经典语录:</h2>
+    <div class="quote">
+        "可能我们的关系需要重新思考一下了" 😠
+    </div>
+    <div class="quote">
+        "曾经觉得是真爱 现在想想也未必见得了" 😒
+    </div>
+    <div class="quote">
+        "算了 你就当我俩肯定会分手吧" 😤
+    </div>
+
+    <h2>照片墙:</h2>
+    <div class="image-gallery">
+        <div class="image-container">
+            <img src="image/1.jpg" alt="柳入微照片1">
+        </div>
+        <div class="image-container">
+            <img src="image/2.jpg" alt="柳入微照片2">
+        </div>
+        <div class="image-container">
+            <img src="image/3.jpg" alt="柳入微照片3">
+        </div>
+    </div>
+</body>
+</html>
